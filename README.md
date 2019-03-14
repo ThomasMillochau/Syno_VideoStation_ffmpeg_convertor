@@ -30,9 +30,9 @@ The video stream is not modified it's simply copied into the output mp4 containe
 - -c:a aac -af aformat=channel_layouts="7.1|5.1|stereo"
 
 The aac parameter is used to convert all audio streams to aac format (by default here aac_lc)
-The aformat parameter forces the number of channels to its initial value (if 7.1 in input then 7.1 in output, if stereo in input then stereo in output) without modifying the audio bitrate of each stream.
+The aformat parameter forces the number of channels to its initial value (if 7.1 in input, then 7.1 in output, if stereo in input, then stereo in output) without modifying the audio bitrate of each stream.
 
-The main objective here is to fixed a default value of the parameter aac of ffmepg when converting a 5.1 audio stream: by default the output stream will be 5.1 (side)
+The main objective here is to fix a default value of the parameter aac of ffmepg when converting a 5.1 audio stream: by default the output stream will be 5.1 (side)
 ```html
 5.1 = FL+FR+FC+LFE+BL+BR
 5.1(side) = FL+FR+FC+LFE+SL+SR 
@@ -46,4 +46,4 @@ VideoStation only reads subtitle files in text format so we convert the files to
 
 - "$i x264 AAC.mp4"
 
-The video, audio, subtitles streams are written after conversion in a container mp4.
+The video, audio, subtitle streams are written after conversion in a container mp4.
